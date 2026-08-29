@@ -2,9 +2,9 @@
 
 Repository: <https://github.com/wangzijian0x7C6/human-understanding-checkpoint>
 
-The repository is public and its CI is passing. Run `python3 scripts/validate_skill.py --release` before creating a versioned release.
+The repository is public, its CI is passing, and `v0.1.0` has been released. Run `python3 scripts/validate_skill.py --release` before future versioned releases.
 
-仓库已经公开，CI 已通过。创建正式版本 Release 前运行 `python3 scripts/validate_skill.py --release`。
+仓库已经公开，CI 已通过，并已发布 `v0.1.0`。后续创建正式版本 Release 前运行 `python3 scripts/validate_skill.py --release`。
 
 - [x] Replace every `<owner>` placeholder in both READMEs with the GitHub user or organization.
 - [x] 替换两份 README 中的全部 `<owner>` 占位符。
@@ -17,5 +17,5 @@ The repository is public and its CI is passing. Run `python3 scripts/validate_sk
 - [x] Add topics: `agent-skills`, `human-in-the-loop`, `llm`, `ai-safety`, `comprehension`, `benchmark`.
 - [ ] Add the repository to skills.sh after the public URL is stable, if desired.
 - [ ] 如有需要，在公开 URL 稳定后提交到 skills.sh。
-- [ ] Create a `v0.1.0` release only after CI passes from a clean checkout.
-- [ ] 仅在干净 checkout 的 CI 全部通过后创建 `v0.1.0` release。
+- [x] Create a `v0.1.0` release only after CI passes from a clean checkout.
+- [x] 仅在干净 checkout 的 CI 全部通过后创建 `v0.1.0` release。
