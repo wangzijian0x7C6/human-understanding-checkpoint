@@ -33,7 +33,7 @@ See [value cases](docs/value-cases.md) for complete before/after scenarios.
 4. Classify the evidence as `confirmed`, `partial`, `misconception`, or `unverified`.
 5. Continue, narrowly repair and recheck, or pause only the dependent step.
 
-Confirmed understanding is stored as conditional topic state and reused until the underlying facts, assumptions, or required precision change.
+Confirmed understanding is stored as conditional topic state and reused; revalidation is generally triggered only when facts or assumptions change, the user later contradicts it, much time or context has passed, or the downstream action requires greater precision.
 
 Understanding and content validity are tracked separately. A consequential number derived only through informal model reasoning remains an unverified estimate until it is reproducibly calculated; the checkpoint verifies that the user understands that status and intended use, not the arithmetic itself.
 
@@ -92,7 +92,7 @@ See [BENCHMARK.md](benchmark/BENCHMARK.md) to run paired generations, blind the 
 SKILL.md                      Runtime behavior contract
 references/                  Runtime patterns loaded only when needed
 agents/openai.yaml           Skill display metadata
-docs/                        Human-facing examples and design notes
+docs/                        Human-facing value cases
 benchmark/                   Cases, blinded harness, rubric, and pilot results
 scripts/validate_skill.py    Repository and skill validation
 .github/                     CI and contribution templates

@@ -33,7 +33,7 @@
 4. 将证据判断为 `confirmed`、`partial`、`misconception` 或 `unverified`。
 5. 继续、精准修复后复查，或只暂停依赖该理解的步骤。
 
-已经确认的理解会作为带条件的主题状态复用；只有事实、假设或所需精度变化时才重新验证。
+已经确认的理解会作为带条件的主题状态复用；一般只在事实或假设变化、用户后续自相矛盾、时间或上下文明显推进、或所需精度提高时才重新验证。
 
 理解状态与内容有效性分别记录。只通过模型在对话中推理得出的重要数字，在可复现计算完成前仍是未验证估算；检查点确认的是用户理解了这一状态及其用途，而不是要求用户验算。
 
@@ -92,7 +92,7 @@ python3 -m unittest discover -s benchmark/tests -p 'test_*.py'
 SKILL.md                      运行时行为契约
 references/                  仅在需要时载入的运行时模式
 agents/openai.yaml           Skill 展示元数据
-docs/                        面向人的案例与设计说明
+docs/                        面向人的价值案例
 benchmark/                   案例、盲测工具、评分规则和 pilot 结果
 scripts/validate_skill.py    仓库与 skill 校验
 .github/                     CI 与贡献模板

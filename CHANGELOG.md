@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+
+- Aligned the README revalidation triggers with the full list in SKILL.md (user contradiction and elapsed time or context, in addition to changed facts, assumptions, or required precision).
+- Corrected the project-layout description of `docs/` to match its actual contents (value cases only).
+
 ## [0.2.0] - 2026-08-29
 
 ### Added
