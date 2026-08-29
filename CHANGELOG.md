@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Persistent `AGENTS.md` maintainer handoff for continuing work in a fresh agent session.
+
 ## [0.1.1] - 2026-08-29
 
 ### Changed

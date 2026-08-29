@@ -14,6 +14,7 @@ SKILL = ROOT / "SKILL.md"
 EXPECTED_NAME = "human-understanding-checkpoint"
 
 REQUIRED_FILES = (
+    "AGENTS.md",
     "SKILL.md",
     "README.md",
     "README.zh-CN.md",
