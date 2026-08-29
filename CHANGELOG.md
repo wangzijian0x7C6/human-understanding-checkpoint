@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-08-29
+
+### Changed
+
+- Reframed the README benchmark section as a preliminary evaluation rather than efficacy evidence.
+- Elevated the non-significant paired test and measurement limitations.
+- Reclassified the now-public case suite as a regression set for future revisions.
+- Documented stronger baselines, sealed holdouts, cross-family judging, human calibration, and participant studies needed for future claims.
+
 ## [0.1.0] - 2026-08-29
 
 ### Added

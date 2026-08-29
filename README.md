@@ -2,7 +2,7 @@
 
 English | [中文](README.zh-CN.md)
 
-An Agent Skill that verifies whether a person understands action-changing model output before a dependent decision, handoff, forwarding step, or consequential action continues.
+An Agent Skill that seeks usable evidence of a person's understanding before action-changing model output is used in a dependent decision, handoff, forwarding step, or consequential action.
 
 It is **not an approval dialog** and **not a tutoring system**. It is a general-purpose comprehension-state protocol for human–LLM collaboration: identify the smallest critical point, ask for usable evidence, repair only the gap, and continue at the right boundary.
 
@@ -63,18 +63,13 @@ Use $human-understanding-checkpoint to verify the points I must understand befor
 
 The skill can also activate automatically when correct understanding is a meaningful dependency.
 
-## Benchmark
+## Preliminary evaluation
 
-The repository includes a paired, blinded benchmark with 21 fixed conversation cases: 7 development cases and 14 held-out cases. It evaluates trigger calibration, critical-point focus, evidence quality, response diagnosis, progression control, interaction quality, hard failures, and question burden.
+The repository includes a paired, blinded evaluation harness with 21 fixed conversation cases. It measures observable **agent behavior**—such as checkpoint calibration, evidence quality, progression control, hard failures, and question burden—not a person's true comprehension.
 
-Two six-case directional pilots produced the following results:
+Two internal pilots of six cases each showed a positive direction, but they used one generation per arm, one same-family judge, and an unrecorded exact model version. Their exact paired sign tests were not statistically significant (`p = 0.25` for each). They should not be cited as evidence that the skill improves human understanding.
 
-| Pilot | Skill | Control | Paired improvement | Bootstrap 95% interval |
-|---|---:|---:|---:|---:|
-| Mixed | 1.000 | 0.715 | +0.285 | +0.056 to +0.576 |
-| Held-out only | 0.882 | 0.611 | +0.271 | +0.042 to +0.562 |
-
-These pilots passed the prespecified product gates but are not decision-grade efficacy evidence: the samples were small, used one generation per arm, and relied on a single same-family judge. Read the [benchmark design](benchmark/BENCHMARK.md) and [full limitations](benchmark/PILOT_RESULTS.md) before citing the numbers.
+The harness, rubric, cases, and raw pilot artifacts remain public for reproducibility. Read the [evaluation design](benchmark/BENCHMARK.md) and [preliminary pilot report](benchmark/PILOT_RESULTS.md). Future efficacy claims require a new sealed holdout, stronger baselines, repeated generations, and independent or human judging.
 
 ## Validate locally
 
@@ -106,6 +101,6 @@ The closest reviewed public skills focus on irreversible software operations or 
 
 ## Contributing
 
-Contributions are welcome, especially new held-out scenarios, accessibility improvements, adapter support, and independent replications. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+Contributions are welcome, especially new regression scenarios, independently maintained sealed evaluations, accessibility improvements, adapter support, and replications. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
-Before making the repository public, complete the [release checklist](RELEASE_CHECKLIST.md), including selecting a license and replacing the repository owner placeholder.
+Release status and remaining optional distribution steps are tracked in the [release checklist](RELEASE_CHECKLIST.md).

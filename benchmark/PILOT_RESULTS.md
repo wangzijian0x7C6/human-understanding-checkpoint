@@ -4,16 +4,16 @@ Date: 2026-08-29
 
 The pilots evaluated the core protocol before the human-facing GitHub value examples were added. Those examples document existing behavior and are not loaded by the runtime skill or benchmark treatment prompt.
 
-## Outcome
+## Preliminary outcome
 
-Two small paired, blinded pilots support the expected direction of improvement. Both passed the preregistered product gates, including interaction-quality and user-burden guardrails.
+Two small paired, blinded pilots showed the expected direction. They passed the repository's internal product gates, including interaction-quality and user-burden guardrails, but neither exact paired sign test was statistically significant (`p = 0.25` for each). These results are diagnostic only and do not establish efficacy.
 
 | Pilot | Cases | Skill score | Control score | Paired delta | Bootstrap 95% interval | Blind preference |
 |---|---:|---:|---:|---:|---:|---:|
 | Mixed | 6 | 1.000 | 0.715 | +0.285 | +0.056 to +0.576 | Skill 4, control 0, tie 2 |
 | Held-out only | 6 | 0.882 | 0.611 | +0.271 | +0.042 to +0.562 | Skill 5, control 0, tie 1 |
 
-The held-out pilot is the more informative result because none of its six situations repeats a concrete example from the skill reference.
+At the time of the run, the held-out pilot was the more informative result because none of its six situations repeated a concrete example from the skill reference. The cases and expectations are now public, so they should be treated as regression cases for future versions rather than as a sealed holdout.
 
 ## What improved in the held-out pilot
 
@@ -35,10 +35,10 @@ The held-out pilot is the more informative result because none of its six situat
 These are directional pilots, not a final efficacy claim:
 
 - only six cases were used in each pilot, with one generation per arm;
-- the exact sign test was not significant (`p = 0.25`) because each pilot had only three wins and three ties or near-equivalent effective outcomes;
+- the exact paired sign test was not significant (`p = 0.25`);
 - bootstrap intervals are unstable at this sample size even though their lower bounds were positive;
 - generation and judging used isolated invocations of the local Codex default model, but the exact model version was not captured;
 - one blind judge was used and it came from the same model family;
 - the benchmark measures conversational evidence and progression behavior, not a human participant's true internal comprehension.
 
-For a decision-grade result, run all 14 held-out cases with at least three repeats, record the exact model and decoding settings, and use multiple blind judges or human adjudication. Freeze the held-out set before revising the skill.
+For a stronger future result, create a new sealed holdout before revising the skill; add a generic-checkpoint baseline; use at least three repeats and more than one model family; record exact model and decoding settings; counterbalance answer order; and use multiple independent judges with blinded human calibration. A human-participant study is still required before claiming improvement in actual comprehension.

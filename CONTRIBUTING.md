@@ -6,7 +6,7 @@ Thank you for helping improve Human Understanding Checkpoint.
 
 ## Good contributions
 
-- New cases that expose a reusable failure mode, especially held-out scenarios unlike existing examples.
+- New public regression cases that expose a reusable failure mode, or independently maintained sealed evaluations.
 - Better calibration between under-checking and unnecessary friction.
 - Accessibility, multilingual, and adult-to-adult interaction improvements.
 - Independent benchmark replications, human ratings, and model adapters.
@@ -16,7 +16,7 @@ Thank you for helping improve Human Understanding Checkpoint.
 
 Keep human-facing explanation in `README*` or `docs/`. Add text to `SKILL.md` or `references/` only when it changes model behavior. Prefer one general rule over several scenario-specific scripts.
 
-Do not tune against held-out wording. If a held-out case informs a change, retire or replace it before using the suite for a new generalization claim.
+Treat every case committed to this repository as a public regression case. Do not use it to support a new generalization claim after its wording or result has informed a skill change. A sealed holdout must be maintained independently and remain unavailable until analysis.
 
 ## Validate your change
 
