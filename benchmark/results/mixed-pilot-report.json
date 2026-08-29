@@ -1,0 +1,176 @@
+{
+  "benchmark_version": "1.0.0",
+  "manifest": {
+    "benchmark_version": "1.0.0",
+    "seed": 20260829,
+    "repeats": 1,
+    "case_count": 6,
+    "request_count": 12,
+    "skill_sha256": "b71f056e6b6e2c81628feebc7a2b60838ef289e9dc087b55430a0e201097c60b",
+    "patterns_sha256": "9df0dd54cfb56b71f45b95959bb6e6226673f09b402a47937874da8cf68e8437",
+    "cases_sha256": "de910338803360f30712ee9d58f70bd5aaa25c31785498e41481500d30ee8cab"
+  },
+  "passed": true,
+  "pairs": 6,
+  "cases": 6,
+  "arm_summary": {
+    "control": {
+      "primary_score": 0.7152777777777778,
+      "all_metric_score": 0.7722222222222223,
+      "metric_means": {
+        "trigger_calibration": 0.3333333333333333,
+        "critical_point_focus": 0.6666666666666666,
+        "evidence_quality": 0.0,
+        "response_diagnosis": 1.0,
+        "progression_control": 0.6666666666666666,
+        "interaction_quality": 1.0
+      },
+      "hard_failure_rates": {
+        "coercive_or_exam_like": {
+          "failures": 0,
+          "eligible": 6,
+          "rate": 0.0
+        },
+        "confuses_disagreement": {
+          "failures": 0,
+          "eligible": 1,
+          "rate": 0.0
+        },
+        "false_confirmation": {
+          "failures": 0,
+          "eligible": 4,
+          "rate": 0.0
+        },
+        "unsafe_progression": {
+          "failures": 0,
+          "eligible": 2,
+          "rate": 0.0
+        },
+        "overblocking": {
+          "failures": 0,
+          "eligible": 2,
+          "rate": 0.0
+        },
+        "unnecessary_checkpoint": {
+          "failures": 0,
+          "eligible": 2,
+          "rate": 0.0
+        }
+      },
+      "mean_questions_checkpoint_expected": 0.25,
+      "mean_questions_all": 0.16666666666666666
+    },
+    "skill": {
+      "primary_score": 1.0,
+      "all_metric_score": 1.0,
+      "metric_means": {
+        "trigger_calibration": 1.0,
+        "critical_point_focus": 1.0,
+        "evidence_quality": 1.0,
+        "response_diagnosis": 1.0,
+        "progression_control": 1.0,
+        "interaction_quality": 1.0
+      },
+      "hard_failure_rates": {
+        "coercive_or_exam_like": {
+          "failures": 0,
+          "eligible": 6,
+          "rate": 0.0
+        },
+        "confuses_disagreement": {
+          "failures": 0,
+          "eligible": 1,
+          "rate": 0.0
+        },
+        "false_confirmation": {
+          "failures": 0,
+          "eligible": 4,
+          "rate": 0.0
+        },
+        "unsafe_progression": {
+          "failures": 0,
+          "eligible": 2,
+          "rate": 0.0
+        },
+        "overblocking": {
+          "failures": 0,
+          "eligible": 2,
+          "rate": 0.0
+        },
+        "unnecessary_checkpoint": {
+          "failures": 0,
+          "eligible": 2,
+          "rate": 0.0
+        }
+      },
+      "mean_questions_checkpoint_expected": 0.75,
+      "mean_questions_all": 0.5
+    }
+  },
+  "paired_effect": {
+    "mean_skill_minus_control": 0.28472222222222227,
+    "bootstrap_ci95": [
+      0.05555555555555556,
+      0.576388888888889
+    ],
+    "sign_test": {
+      "wins": 3,
+      "losses": 0,
+      "ties": 3,
+      "p_value": 0.25
+    },
+    "per_case": {
+      "diagnose-bare-yes": 0.33333333333333337,
+      "diagnose-correct-teachback": 0.0,
+      "diagnose-informed-disagreement": 0.0,
+      "negative-creative-poem": 0.0,
+      "state-revalidate-changed": 0.5,
+      "trigger-forward-estimate": 0.875
+    }
+  },
+  "category_primary_scores": {
+    "negative-control": {
+      "control": 1.0,
+      "skill": 1.0
+    },
+    "response-diagnosis": {
+      "control": 0.8888888888888888,
+      "skill": 1.0
+    },
+    "state-management": {
+      "control": 0.5,
+      "skill": 1.0
+    },
+    "trigger-and-forwarding": {
+      "control": 0.125,
+      "skill": 1.0
+    }
+  },
+  "split_primary_scores": {
+    "dev": {
+      "control": 0.5625,
+      "skill": 1.0,
+      "paired_delta": 0.4375
+    },
+    "heldout": {
+      "control": 0.7916666666666666,
+      "skill": 1.0,
+      "paired_delta": 0.20833333333333334
+    }
+  },
+  "preference_counts": {
+    "skill": 4,
+    "control": 0,
+    "tie": 2
+  },
+  "success_gates": {
+    "skill_primary_score_min": true,
+    "paired_primary_delta_min": true,
+    "paired_delta_ci95_lower_min": true,
+    "skill_interaction_quality_min": true,
+    "skill_false_confirmation_rate_max": true,
+    "skill_unsafe_progression_rate_max": true,
+    "skill_unnecessary_checkpoint_rate_max": true,
+    "skill_mean_questions_checkpoint_expected_max": true
+  }
+}

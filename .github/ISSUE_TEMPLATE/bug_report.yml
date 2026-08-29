@@ -1,0 +1,29 @@
+name: Bug report
+description: Report incorrect triggering, diagnosis, progression, or repository behavior.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Scenario
+      description: Provide the smallest conversation needed to reproduce the behavior. Remove private data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Agent and model version
+      description: Include the exact version when available.

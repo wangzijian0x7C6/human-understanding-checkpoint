@@ -1,0 +1,111 @@
+# 人类理解检查点
+
+[English](README.md) | 中文
+
+一个 Agent Skill：当后续对话、决策、交接、转发或重要行动依赖于人的正确理解时，先取得可观察的理解证据，再继续相关步骤。
+
+它**不是审批弹窗**，也**不是教学系统**。它是一套面向人–LLM 协作的通用“理解状态协议”：找出最小关键点，取得可用证据，只修复理解缺口，并在正确的边界继续工作。
+
+> [!NOTE]
+> 本项目目前是研究预览版。它只能提供对话中的理解证据，不能证明人的内在状态，也不构成法律同意、医疗行为能力或专业胜任力的证明。
+
+## 为什么需要它
+
+模型输出经常被直接复制到决策、文档或消息里，而人可能没有意识到其中的假设、不确定性或承诺。礼貌地回复“明白了”并不能说明关键内容能够被正确应用。
+
+这个 skill 只在误解可能改变下一步时，加入与风险相称的检查点。
+
+| 场景 | 常见失败 | 检查点的处理 |
+|---|---|---|
+| 转发 AI 撰写的建议 | 估算结果被包装成人认可的事实 | 定稿前让发送者解释关键主张和承诺 |
+| 后续工作依赖先前区别 | 把“明白”当成长期有效的证据 | 结合真实下一步验证，并记录成立条件 |
+| 用户理解但不同意 | 模型反复警告或阻止继续 | 将权衡标为已确认，并尊重知情选择 |
+| 已确认的假设发生变化 | 在新情境中继续沿用旧信心 | 只重新验证受影响的主题，而不是重考全部内容 |
+
+完整的前后对比例子见[价值案例](docs/value-cases.zh-CN.md)。
+
+## 工作方式
+
+1. 找出最多三个可能改变用户下一步行动的命题。
+2. 选择足够但最轻的强度：`light`、`active` 或明确要求的 gated 模式。
+3. 提出一个应用、复述、后果、辨析或预测问题。
+4. 将证据判断为 `confirmed`、`partial`、`misconception` 或 `unverified`。
+5. 继续、精准修复后复查，或只暂停依赖该理解的步骤。
+
+已经确认的理解会作为带条件的主题状态复用；只有事实、假设或所需精度变化时才重新验证。
+
+## 模式
+
+- `adaptive`：默认模式；只有后果值得时才介入。
+- `always`：每当实质性回复引入新的决策相关概念时进行检查。
+- `gate`：理解未确认前不执行依赖步骤；只在用户明确要求或其他规则要求时使用。
+
+## 安装
+
+从 GitHub 安装：
+
+```sh
+npx skills add wangzijian0x7C6/human-understanding-checkpoint
+```
+
+手动安装到 Codex：
+
+```sh
+git clone https://github.com/wangzijian0x7C6/human-understanding-checkpoint.git \
+  ~/.codex/skills/human-understanding-checkpoint
+```
+
+需要时可以显式调用：
+
+```text
+使用 $human-understanding-checkpoint，确认我在发送这份提案前必须理解的关键点。
+```
+
+当正确理解构成重要依赖时，该 skill 也可以自动触发。
+
+## Benchmark
+
+仓库包含一套成对、盲测 benchmark，共 21 个固定对话案例：7 个开发集案例和 14 个保留集案例。它评估触发校准、关键点聚焦、证据质量、理解诊断、进度控制、交互质量、硬失败和问题负担。
+
+两次各含 6 个案例的方向性 pilot 结果如下：
+
+| Pilot | Skill | Control | 成对提升 | Bootstrap 95% 区间 |
+|---|---:|---:|---:|---:|
+| 混合集 | 1.000 | 0.715 | +0.285 | +0.056 至 +0.576 |
+| 仅保留集 | 0.882 | 0.611 | +0.271 | +0.042 至 +0.562 |
+
+两次 pilot 都通过了预先设定的产品门槛，但还不能当作决策级效果证据：样本很小，每个条件只生成一次，而且只使用了一个同模型家族的评审。引用数字前请阅读 [benchmark 设计](benchmark/BENCHMARK.md)和[完整局限](benchmark/PILOT_RESULTS.md)。
+
+## 本地验证
+
+结构检查与 benchmark harness 测试不需要第三方 Python 包。
+
+```sh
+python3 scripts/validate_skill.py
+python3 benchmark/benchmark.py validate
+python3 -m unittest discover -s benchmark/tests -p 'test_*.py'
+```
+
+如何进行成对生成、输出盲化、评分和分析，见 [BENCHMARK.md](benchmark/BENCHMARK.md)。
+
+## 项目结构
+
+```text
+SKILL.md                      运行时行为契约
+references/                  仅在需要时载入的运行时模式
+agents/openai.yaml           Skill 展示元数据
+docs/                        面向人的案例与设计说明
+benchmark/                   案例、盲测工具、评分规则和 pilot 结果
+scripts/validate_skill.py    仓库与 skill 校验
+.github/                     CI 与贡献模板
+```
+
+## 相关工作
+
+目前最接近的公开 skill 主要关注不可逆的软件操作，或以掌握知识为目标的教学。本项目关注的是通用对话状态、内容转发、比例适当的介入、知情但不同意，以及只阻断依赖步骤。证据与对比表见[相关 skill 调研](benchmark/OVERLAP_RESEARCH.md)。
+
+## 参与贡献
+
+欢迎贡献新的保留集场景、无障碍改进、模型适配器和独立复现实验。提交 PR 前请阅读 [CONTRIBUTING.zh-CN.md](CONTRIBUTING.zh-CN.md)。
+
+公开发布前，请完成[发布检查表](RELEASE_CHECKLIST.md)，特别是选择许可证并替换仓库所有者占位符。

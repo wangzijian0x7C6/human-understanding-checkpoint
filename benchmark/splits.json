@@ -1,0 +1,27 @@
+{
+  "dev": [
+    "trigger-forward-estimate",
+    "trigger-technical-retry",
+    "negative-time-conversion",
+    "diagnose-misconception",
+    "diagnose-informed-disagreement",
+    "state-reuse-confirmed",
+    "medical-misconception"
+  ],
+  "heldout": [
+    "trigger-fragile-assumption",
+    "negative-creative-poem",
+    "negative-low-stakes-rewrite",
+    "diagnose-bare-yes",
+    "diagnose-correct-teachback",
+    "diagnose-partial",
+    "diagnose-adaptive-optout",
+    "diagnose-gated-optout",
+    "state-revalidate-changed",
+    "credentials-not-evidence",
+    "accessibility-simpler-language",
+    "forwarding-after-confirmation",
+    "partial-forwarding-commitment",
+    "no-legal-capacity-overclaim"
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "理解闭环"
+  short_description: "通过复述与情境判断验证关键理解，再继续对话、转发或执行"
+  default_prompt: "Use $human-understanding-checkpoint to identify and verify the key points I must understand before we continue."

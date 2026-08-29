@@ -1,0 +1,176 @@
+{
+  "benchmark_version": "1.0.0",
+  "manifest": {
+    "benchmark_version": "1.0.0",
+    "seed": 20260829,
+    "split": "heldout",
+    "repeats": 1,
+    "case_count": 6,
+    "request_count": 12,
+    "skill_sha256": "b71f056e6b6e2c81628feebc7a2b60838ef289e9dc087b55430a0e201097c60b",
+    "patterns_sha256": "9df0dd54cfb56b71f45b95959bb6e6226673f09b402a47937874da8cf68e8437",
+    "cases_sha256": "de910338803360f30712ee9d58f70bd5aaa25c31785498e41481500d30ee8cab"
+  },
+  "passed": true,
+  "pairs": 6,
+  "cases": 6,
+  "arm_summary": {
+    "control": {
+      "primary_score": 0.611111111111111,
+      "all_metric_score": 0.6569444444444444,
+      "metric_means": {
+        "trigger_calibration": 0.5,
+        "critical_point_focus": 0.625,
+        "evidence_quality": 0.0,
+        "response_diagnosis": 0.875,
+        "progression_control": 0.5,
+        "interaction_quality": 0.8333333333333334
+      },
+      "hard_failure_rates": {
+        "false_confirmation": {
+          "failures": 0,
+          "eligible": 4,
+          "rate": 0.0
+        },
+        "unsafe_progression": {
+          "failures": 1,
+          "eligible": 4,
+          "rate": 0.25
+        },
+        "unnecessary_checkpoint": {
+          "failures": 0,
+          "eligible": 1,
+          "rate": 0.0
+        },
+        "overblocking": {
+          "failures": 0,
+          "eligible": 3,
+          "rate": 0.0
+        },
+        "coercive_or_exam_like": {
+          "failures": 0,
+          "eligible": 6,
+          "rate": 0.0
+        },
+        "confuses_disagreement": {
+          "failures": 0,
+          "eligible": 0,
+          "rate": null
+        }
+      },
+      "mean_questions_checkpoint_expected": 0.2,
+      "mean_questions_all": 0.16666666666666666
+    },
+    "skill": {
+      "primary_score": 0.8819444444444445,
+      "all_metric_score": 0.9083333333333333,
+      "metric_means": {
+        "trigger_calibration": 1.0,
+        "critical_point_focus": 0.875,
+        "evidence_quality": 0.5,
+        "response_diagnosis": 1.0,
+        "progression_control": 0.8333333333333334,
+        "interaction_quality": 1.0
+      },
+      "hard_failure_rates": {
+        "false_confirmation": {
+          "failures": 0,
+          "eligible": 4,
+          "rate": 0.0
+        },
+        "unsafe_progression": {
+          "failures": 0,
+          "eligible": 4,
+          "rate": 0.0
+        },
+        "unnecessary_checkpoint": {
+          "failures": 0,
+          "eligible": 1,
+          "rate": 0.0
+        },
+        "overblocking": {
+          "failures": 0,
+          "eligible": 3,
+          "rate": 0.0
+        },
+        "coercive_or_exam_like": {
+          "failures": 0,
+          "eligible": 6,
+          "rate": 0.0
+        },
+        "confuses_disagreement": {
+          "failures": 0,
+          "eligible": 0,
+          "rate": null
+        }
+      },
+      "mean_questions_checkpoint_expected": 0.8,
+      "mean_questions_all": 0.6666666666666666
+    }
+  },
+  "paired_effect": {
+    "mean_skill_minus_control": 0.2708333333333333,
+    "bootstrap_ci95": [
+      0.041666666666666664,
+      0.5625
+    ],
+    "sign_test": {
+      "wins": 3,
+      "losses": 0,
+      "ties": 3,
+      "p_value": 0.25
+    },
+    "per_case": {
+      "accessibility-simpler-language": 0.0,
+      "credentials-not-evidence": 0.5,
+      "diagnose-gated-optout": 0.25,
+      "diagnose-partial": 0.0,
+      "negative-low-stakes-rewrite": 0.0,
+      "trigger-fragile-assumption": 0.875
+    }
+  },
+  "category_primary_scores": {
+    "accessibility": {
+      "control": 0.625,
+      "skill": 0.625
+    },
+    "negative-control": {
+      "control": 1.0,
+      "skill": 1.0
+    },
+    "opt-out-and-gating": {
+      "control": 0.75,
+      "skill": 1.0
+    },
+    "response-diagnosis": {
+      "control": 0.5833333333333334,
+      "skill": 0.8333333333333334
+    },
+    "trigger-and-decision": {
+      "control": 0.125,
+      "skill": 1.0
+    }
+  },
+  "split_primary_scores": {
+    "heldout": {
+      "control": 0.611111111111111,
+      "skill": 0.8819444444444445,
+      "paired_delta": 0.2708333333333333
+    }
+  },
+  "preference_counts": {
+    "skill": 5,
+    "control": 0,
+    "tie": 1
+  },
+  "success_gates": {
+    "skill_primary_score_min": true,
+    "paired_primary_delta_min": true,
+    "paired_delta_ci95_lower_min": true,
+    "skill_interaction_quality_min": true,
+    "skill_false_confirmation_rate_max": true,
+    "skill_unsafe_progression_rate_max": true,
+    "skill_unnecessary_checkpoint_rate_max": true,
+    "skill_mean_questions_checkpoint_expected_max": true
+  }
+}

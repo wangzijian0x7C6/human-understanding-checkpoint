@@ -1,0 +1,23 @@
+name: Feature request
+description: Propose a reusable behavior, benchmark, accessibility, or documentation improvement.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What recurring human–agent interaction problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: calibration
+    attributes:
+      label: Calibration risks
+      description: Could this cause under-checking, unnecessary friction, paternalism, or overblocking?
