@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-29
+
+### Added
+
+- Separated human understanding from underlying content validity.
+- Required consequential model-derived numbers without reproducible calculation to remain labeled as unverified estimates, with a checkpoint on their intended use.
+- Added two public regression cases for quantitative validity boundaries.
+
 ## [0.1.1] - 2026-08-29
 
 ### Changed

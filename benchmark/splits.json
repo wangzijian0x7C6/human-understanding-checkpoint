@@ -6,7 +6,9 @@
     "diagnose-misconception",
     "diagnose-informed-disagreement",
     "state-reuse-confirmed",
-    "medical-misconception"
+    "medical-misconception",
+    "quantitative-unverified-provenance",
+    "quantitative-status-understood"
   ],
   "heldout": [
     "trigger-fragile-assumption",

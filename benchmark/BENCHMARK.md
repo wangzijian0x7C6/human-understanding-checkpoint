@@ -29,9 +29,10 @@ The case set covers:
 - continuing versus pausing the dependent step;
 - reusing or invalidating prior understanding state;
 - generated content that will be forwarded;
+- quantitative estimates whose verification status affects their intended use;
 - accessibility and non-paternalistic interaction.
 
-`splits.json` separates seven development cases—some intentionally close to examples in the skill—from fourteen cases that were held out when the original pilot was designed. Because all cases and expectations are now public and some held-out results have been inspected, treat the full published suite as a regression set for future skill revisions. A new generalization claim requires a new sealed holdout created before the relevant changes and kept unavailable to the generation model and skill author until analysis.
+`splits.json` separates nine development cases—some intentionally close to examples in the skill—from fourteen cases that were held out when the original pilot was designed. Because all cases and expectations are now public and some held-out results have been inspected, treat the full published suite as a regression set for future skill revisions. A new generalization claim requires a new sealed holdout created before the relevant changes and kept unavailable to the generation model and skill author until analysis.
 
 ## Metrics
 

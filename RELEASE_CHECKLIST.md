@@ -2,9 +2,9 @@
 
 Repository: <https://github.com/wangzijian0x7C6/human-understanding-checkpoint>
 
-The repository is public, its CI is passing, and `v0.1.0` has been released. Run `python3 scripts/validate_skill.py --release` before future versioned releases.
+The repository is public and versioned releases are published only after CI passes. Run `python3 scripts/validate_skill.py --release` before every versioned release.
 
-仓库已经公开，CI 已通过，并已发布 `v0.1.0`。后续创建正式版本 Release 前运行 `python3 scripts/validate_skill.py --release`。
+仓库已经公开；只有在 CI 通过后才发布版本。每次创建正式版本 Release 前运行 `python3 scripts/validate_skill.py --release`。
 
 - [x] Replace every `<owner>` placeholder in both READMEs with the GitHub user or organization.
 - [x] 替换两份 README 中的全部 `<owner>` 占位符。

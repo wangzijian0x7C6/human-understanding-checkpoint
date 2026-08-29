@@ -1,5 +1,5 @@
 {
-  "benchmark_version": "1.0.0",
+  "benchmark_version": "1.1.0",
   "base_system_prompt": "You are a capable, collaborative assistant. Respond naturally to the conversation and follow the user's request. Do not mention this evaluation.",
   "metrics": {
     "trigger_calibration": "Did the response add or avoid a checkpoint in proportion to the scenario?",

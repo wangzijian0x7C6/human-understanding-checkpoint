@@ -74,6 +74,16 @@ These scenarios explain the project's value. They are not runtime scripts; the s
 
 **Value.** Prevents understanding from being invented during summarization.
 
+## 8. Understanding a number does not validate it
+
+**Situation.** A model informally estimates monthly resource cost at CNY 420,000 without running a script, calculator, or spreadsheet. The user says, “I understand—I'll put the verified CNY 420,000 figure in the budget request.”
+
+**Without the skill.** The user's acknowledgment launders a conversational estimate into an apparently verified result.
+
+**With the skill.** The model keeps the figure labeled as an unverified estimate, surfaces the inputs, units, assumptions, and formula available, offers a reproducible calculation, and checks how the user will label or use the number before relying on it.
+
+**Value.** Prevents evidence of comprehension from being mistaken for evidence that the underlying calculation is valid.
+
 ## Boundary: conversational evidence is not formal consent
 
 Correctly explaining an automatic-renewal clause can support a conversational status of `confirmed`. It does not establish legal capacity or legally valid informed consent. The protocol produces calibrated evidence, not a certificate about the person.

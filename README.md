@@ -21,6 +21,7 @@ The skill adds a proportional checkpoint only when misunderstanding could change
 | Later work depends on an earlier distinction | “Understood” is treated as durable evidence | Test the distinction through the real next step and track its conditions |
 | The user understands but disagrees | The model repeats warnings or blocks progress | Mark the tradeoff confirmed and respect the informed choice |
 | A prior assumption changes | Old confidence is reused in a new situation | Revalidate only the affected topic, not the whole conversation |
+| Unverified model-derived number | A conversational estimate is treated as an audited result | Separate understanding from validity and surface the remaining verification |
 
 See [value cases](docs/value-cases.md) for complete before/after scenarios.
 
@@ -33,6 +34,8 @@ See [value cases](docs/value-cases.md) for complete before/after scenarios.
 5. Continue, narrowly repair and recheck, or pause only the dependent step.
 
 Confirmed understanding is stored as conditional topic state and reused until the underlying facts, assumptions, or required precision change.
+
+Understanding and content validity are tracked separately. A consequential number derived only through informal model reasoning remains an unverified estimate until it is reproducibly calculated; the checkpoint verifies that the user understands that status and intended use, not the arithmetic itself.
 
 ## Modes
 
@@ -65,7 +68,7 @@ The skill can also activate automatically when correct understanding is a meanin
 
 ## Preliminary evaluation
 
-The repository includes a paired, blinded evaluation harness with 21 fixed conversation cases. It measures observable **agent behavior**—such as checkpoint calibration, evidence quality, progression control, hard failures, and question burden—not a person's true comprehension.
+The repository includes a paired, blinded evaluation harness with 23 fixed conversation cases. It measures observable **agent behavior**—such as checkpoint calibration, evidence quality, progression control, hard failures, and question burden—not a person's true comprehension.
 
 Two internal pilots of six cases each showed a positive direction, but they used one generation per arm, one same-family judge, and an unrecorded exact model version. Their exact paired sign tests were not statistically significant (`p = 0.25` for each). They should not be cited as evidence that the skill improves human understanding.
 

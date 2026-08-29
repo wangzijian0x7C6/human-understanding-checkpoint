@@ -30,6 +30,19 @@ Checkpoint when at least one of these is true:
 
 Usually skip a checkpoint for casual conversation, simple factual retrieval, reversible low-impact work, creative generation with no important factual commitment, or repeated material whose understanding remains current.
 
+## Keep understanding separate from content validity
+
+Evidence that the user understands a claim is not evidence that the claim is correct.
+
+When a material quantitative claim could change the next action and was derived through informal model reasoning rather than a reproducible deterministic calculation:
+
+- label it as an unverified estimate;
+- surface the inputs, units, assumptions, and formula when available;
+- offer an appropriate deterministic verification method;
+- before the user relies on or forwards it, verify that they understand its status and the verification still required.
+
+Use the checkpoint to test interpretation and intended use, not to make the user audit arithmetic. Do not shift sole responsibility to the user or imply that a correct teach-back validates the number.
+
 ## Run the loop
 
 ### 1. Define the critical understanding set
