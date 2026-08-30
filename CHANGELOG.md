@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Changed
+
+- Generalized the unverified-estimate protocol beyond quantitative reasoning to four more known LLM reliability limitations: traceable references (citations, statutes, clause and API names), current-state facts that may predate the knowledge cutoff, execution claims without an anchored tool result, and extracted detail from images, PDFs, tables, or long documents.
+- The forwarding workflow now also checks that hedges and estimates survive the user's restatement.
+- Added two worked cases to the runtime patterns reference: plausible but unverified citations, and unanchored execution claims.
+
+### Evaluation
+
+- Ran the required paired blinded evaluation for this runtime change (public regression suite, 23 cases × 2 repeats, both arms, codex-cli 0.147.0 as generation model and same-family blind judge, seed 20260829). Skill-arm primary score held at 0.970 with zero hard failures in both runs; the paired delta was +0.128 before and +0.095 after, with the post-change gate miss (+0.095 vs +0.10 threshold) traced by unblinding to control-arm variation on unchanged cases and judge wording variance, not to any behavioral regression. Per the standing decision above, this public suite records regression only; the five-category generalization still requires a newly created sealed holdout.
+
 ### Fixed
 
 - Aligned the README revalidation triggers with the full list in SKILL.md (user contradiction and elapsed time or context, in addition to changed facts, assumptions, or required precision).

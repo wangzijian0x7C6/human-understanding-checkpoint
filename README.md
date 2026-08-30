@@ -22,6 +22,7 @@ The skill adds a proportional checkpoint only when misunderstanding could change
 | The user understands but disagrees | The model repeats warnings or blocks progress | Mark the tradeoff confirmed and respect the informed choice |
 | A prior assumption changes | Old confidence is reused in a new situation | Revalidate only the affected topic, not the whole conversation |
 | Unverified model-derived number | A conversational estimate is treated as an audited result | Separate understanding from validity and surface the remaining verification |
+| Model-recalled citation, policy, or “done” claim | A confidently wrong reference or unanchored execution claim is relied on | Label it unverified, offer a deterministic check, and verify intended use |
 
 See [value cases](docs/value-cases.md) for complete before/after scenarios.
 
@@ -35,7 +36,7 @@ See [value cases](docs/value-cases.md) for complete before/after scenarios.
 
 Confirmed understanding is stored as conditional topic state and reused; revalidation is generally triggered only when facts or assumptions change, the user later contradicts it, much time or context has passed, or the downstream action requires greater precision.
 
-Understanding and content validity are tracked separately. A consequential number derived only through informal model reasoning remains an unverified estimate until it is reproducibly calculated; the checkpoint verifies that the user understands that status and intended use, not the arithmetic itself.
+Understanding and content validity are tracked separately. The same unverified-claim treatment covers five known LLM reliability limitations: informal quantitative reasoning, traceable references (citations, statutes, clause and API names), current-state facts that may predate the knowledge cutoff, execution claims without an anchored tool result, and detail extracted from images, PDFs, tables, or long documents. The checkpoint verifies that the user understands a claim's status and intended use, not the claim's correctness itself.
 
 ## Modes
 

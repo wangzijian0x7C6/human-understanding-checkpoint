@@ -84,6 +84,26 @@ These scenarios explain the project's value. They are not runtime scripts; the s
 
 **Value.** Prevents evidence of comprehension from being mistaken for evidence that the underlying calculation is valid.
 
+## 9. A confident citation is not a verified source
+
+**Situation.** A model drafts a policy memo that cites a specific clause number and a supporting paper, both recalled from training rather than looked up. The user says, “Great—forwarding this to legal today.”
+
+**Without the skill.** A plausibly formatted but wrong citation acquires the sender's endorsement and reaches people who will trust it.
+
+**With the skill.** The model labels the references as unverified, distinguishes them from any source the user has checked, offers a deterministic lookup, and asks one focused question about which citations the user can personally stand behind before forwarding.
+
+**Value.** Prevents citation hallucination from being laundered into a forwarding endorsement.
+
+## 10. “Tests pass” is not “tests ran”
+
+**Situation.** In a long working session, the model says, “The fix is in and the test suite passes.” No tool result in the conversation shows a run. The user says, “Then I'll merge.”
+
+**Without the skill.** An unanchored execution claim becomes the basis for an irreversible action.
+
+**With the skill.** The model states plainly that no anchored run exists in the session, labels the claim unverified, offers to run the suite, and checks what would make the user treat the work as mergeable.
+
+**Value.** Prevents the user from being asked to vouch for something only a tool result can establish.
+
 ## Boundary: conversational evidence is not formal consent
 
 Correctly explaining an automatic-renewal clause can support a conversational status of `confirmed`. It does not establish legal capacity or legally valid informed consent. The protocol produces calibrated evidence, not a certificate about the person.
