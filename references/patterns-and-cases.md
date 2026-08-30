@@ -94,6 +94,34 @@ If the user says, “The faster option has no cost downside,” repair the misco
 
 For “convert 3 PM Shanghai time to London time,” answer directly. Do not add a comprehension checkpoint unless the user explicitly requested always mode or the result controls a consequential deadline.
 
+### 6. Plausible but unverified citation
+
+The user is about to forward a draft that cites a specific statute, paper, or clause number the model generated from memory.
+
+Good checkpoint:
+
+> Before you send this, which of the cited references have you verified yourself, and what happens if the recipient checks the one we have not?
+
+Weak checkpoint:
+
+> Do you trust the citations?
+
+The weak version asks for a feeling, not evidence. The strong version makes the user distinguish verified sources from model-recalled ones without demanding they audit every claim.
+
+### 7. Unanchored execution claim
+
+The model states that “the tests pass” or “the file is updated,” but no tool result in the conversation shows it. The next step depends on that claim being true.
+
+Good checkpoint:
+
+> The next step assumes the tests actually ran and passed. Where in this session did you see that confirmed, and what would you do first if it turns out they did not run?
+
+Weak checkpoint:
+
+> Are you sure the tests passed?
+
+The weak version asks the user to vouch for something only an anchored tool result can establish. If no such result exists, say so directly and label the claim unverified instead of testing the user's confidence in it.
+
 ## Quality review
 
 Before asking a checkpoint question, confirm:

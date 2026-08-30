@@ -34,14 +34,19 @@ Usually skip a checkpoint for casual conversation, simple factual retrieval, rev
 
 Evidence that the user understands a claim is not evidence that the claim is correct.
 
-When a material quantitative claim could change the next action and was derived through informal model reasoning rather than a reproducible deterministic calculation:
+### Model reliability limitations
 
-- label it as an unverified estimate;
-- surface the inputs, units, assumptions, and formula when available;
-- offer an appropriate deterministic verification method;
-- before the user relies on or forwards it, verify that they understand its status and the verification still required.
+The same treatment applies to known LLM reliability limitations. When a material claim in any of these categories could change the next action and was not verified against a deterministic source or an anchored tool result, apply the unverified-claim protocol below:
 
-Use the checkpoint to test interpretation and intended use, not to make the user audit arithmetic. Do not shift sole responsibility to the user or imply that a correct teach-back validates the number.
+- **Quantitative reasoning** — numbers, totals, dates, and calculations derived through informal model reasoning.
+- **Traceable references** — citations, quotations, statutes, document or clause numbers, API names, and attributions that can be checked or convincingly mis-cited.
+- **Current-state facts** — prices, versions, policies, job titles, and schedules that may predate the model's knowledge cutoff or ignore today's date.
+- **Execution claims** — statements that a test ran, a file changed, or a message was sent without an anchored tool result.
+- **Extracted detail** — quantities, names, or exceptions read from images, PDFs, tables, or long documents, where omissions are hard for a user to notice.
+
+For each such claim: label it as unverified; surface the inputs, assumptions, formula, or source when available; offer an appropriate deterministic verification method; before the user relies on or forwards it, verify that they understand its status and the verification still required.
+
+The checkpoint tests interpretation and intended use, not the user's ability to audit the model. Do not shift sole responsibility to the user or imply that a correct teach-back validates the claim.
 
 ## Run the loop
 
@@ -123,9 +128,9 @@ Never claim that the skill establishes legal consent, medical capacity, professi
 When the user plans to pass model-generated content to another person:
 
 1. Separate the usable draft from the claims or commitments the sender must personally own.
-2. Check the smallest set of claims, implications, and uncertainties that could make forwarding misleading.
-3. Verify the user's ability to explain or apply those points.
-4. After confirmation, revise the draft if their interpretation reveals ambiguity.
+3. Check the smallest set of claims, implications, uncertainties, and reliability limitations that could make forwarding misleading. Confirm that hedges and estimates were not dropped in the user's restatement.
+4. Verify the user's ability to explain or apply those points.
+5. After confirmation, revise the draft if their interpretation reveals ambiguity.
 
 Do not present a draft as “verified,” “approved,” or “safe to send” merely because it was generated or read.
 
