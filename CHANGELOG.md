@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+- Added a HIL (human-in-the-loop) positioning statement to the "Why this exists" section of both READMEs: operation gates already exist, but the information side lacks a human-judgment checkpoint, and this skill extends HIL to information by requiring verifiable evidence of understanding before model output drives a decision or gets forwarded.
+
 - Generalized the unverified-estimate protocol beyond quantitative reasoning to four more known LLM reliability limitations: traceable references (citations, statutes, clause and API names), current-state facts that may predate the knowledge cutoff, execution claims without an anchored tool result, and extracted detail from images, PDFs, tables, or long documents.
 - The forwarding workflow now also checks that hedges and estimates survive the user's restatement.
 - Added two worked cases to the runtime patterns reference: plausible but unverified citations, and unanchored execution claims.

@@ -11,6 +11,10 @@ It is **not an approval dialog** and **not a tutoring system**. It is a general-
 
 ## Why this exists
 
+Nearly every agent harness has a human-in-the-loop (HIL) gate for **operations**: a human judgment must pass before an action executes. But HIL is not limited to approvals — its essence is making human judgment a checkpoint in the flow. On the **information** side, that checkpoint is missing: conversational conclusions and model-produced files are trusted, repeated, forwarded, or written into documents without any human cognitive step in between. A wrong operation usually surfaces immediately; wrong information spreads silently — once cited, it carries the citers' endorsement.
+
+This skill extends HIL to information: before model output drives a decision or gets forwarded, it asks the human for verifiable evidence of understanding, not just an "OK." Operations pass on authorization; information passes on understanding.
+
 Model output is often copied into a decision, document, or message without the human noticing an assumption, uncertainty, or commitment. A polite “yes” or “understood” does not show that the point can be applied correctly.
 
 The skill adds a proportional checkpoint only when misunderstanding could change the next step.
